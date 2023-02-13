@@ -1,0 +1,1 @@
+import{_ as e,o,c,a as s}from"./_plugin-vue_export-helper-2967bb73.js";const t={},n={class:"container"},_=s("h1",null,"這裡是首頁(･∀･)",-1),a=[_];function r(i,d){return o(),c("div",n,a)}const f=e(t,[["render",r]]);export{f as default};

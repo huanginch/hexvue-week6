@@ -1,0 +1,1 @@
+import{_ as e,o as s,c as t,a as c}from"./_plugin-vue_export-helper-2967bb73.js";const o={},n={class:"container"},r=c("h1",null,"This is register page",-1),a=[r];function _(i,d){return s(),t("div",n,a)}const f=e(o,[["render",_]]);export{f as default};
