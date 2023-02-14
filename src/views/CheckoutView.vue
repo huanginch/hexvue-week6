@@ -128,7 +128,7 @@
 import cartStore from "../stores/cartStore";
 import { mapActions, mapState } from "pinia";
 
-const { VITE_API_URL, VITE_API_PATH } = import.meta.env;
+const { VITE_APP_URL, VITE_APP_PATH } = import.meta.env;
 
 export default {
   name: "CheckoutView",
@@ -155,7 +155,7 @@ export default {
         message: this.message,
       };
       this.$http
-        .post(`${VITE_API_URL}/${VITE_API_PATH}/order`, { data })
+        .post(`${VITE_APP_URL}/${VITE_APP_PATH}/order`, { data })
         .then((res) => {
           // 清空購物車
           this.getCart();

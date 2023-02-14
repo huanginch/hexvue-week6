@@ -56,7 +56,6 @@
 </template>
 
 <script>
-// const { VITE_API_URL } = import.meta.env;
 import authStore from "../stores/authStore.js";
 import { mapActions } from "pinia";
 

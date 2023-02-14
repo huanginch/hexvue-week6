@@ -1,6 +1,6 @@
 import { defineStore } from "pinia";
 import axios from "axios";
-const { VITE_API_URL, VITE_API_PATH } = import.meta.env;
+const { VITE_APP_URL, VITE_APP_PATH } = import.meta.env;
 
 export default defineStore("cartStore", {
   state: () => ({
@@ -23,7 +23,7 @@ export default defineStore("cartStore", {
       // 開啟loading
       this.isLoading = true;
       axios
-        .get(`${VITE_API_URL}/api/${VITE_API_PATH}/cart`)
+        .get(`${VITE_APP_URL}/api/${VITE_APP_PATH}/cart`)
         .then((res) => {
           // 購物車資料在res.data.data.carts裡...
           this.carts = res.data.data.carts;
@@ -51,7 +51,7 @@ export default defineStore("cartStore", {
       } else {
         // 沒有重複的產品，新增購物車
         axios
-          .post(`${VITE_API_URL}/api/${VITE_API_PATH}/cart`, { data })
+          .post(`${VITE_APP_URL}/api/${VITE_APP_PATH}/cart`, { data })
           .then((res) => {
             // 關閉loading
             this.isLoading = false;
@@ -79,7 +79,7 @@ export default defineStore("cartStore", {
       this.isLoading = true;
       // 更新購物車
       axios
-        .put(`${VITE_API_URL}/api/${VITE_API_PATH}/cart/${id}`, { data })
+        .put(`${VITE_APP_URL}/api/${VITE_APP_PATH}/cart/${id}`, { data })
         .then((res) => {
           // 關閉loading
           this.isLoading = false;
@@ -94,7 +94,7 @@ export default defineStore("cartStore", {
       // 開啟loading
       this.isLoading = true;
       axios
-        .delete(`${VITE_API_URL}/api/${VITE_API_PATH}/cart/${id}`)
+        .delete(`${VITE_APP_URL}/api/${VITE_APP_PATH}/cart/${id}`)
         .then((res) => {
           // 關閉loading
           this.isLoading = false;
@@ -109,7 +109,7 @@ export default defineStore("cartStore", {
       // 開啟loading
       this.isLoading = true;
       axios
-        .delete(`${VITE_API_URL}${VITE_API_PATH}/carts`)
+        .delete(`${VITE_APP_URL}${VITE_APP_PATH}/carts`)
         .then((res) => {
           // 關閉loading
           this.isLoading = false;

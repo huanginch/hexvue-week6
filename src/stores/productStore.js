@@ -1,6 +1,6 @@
 import { defineStore } from "pinia";
 import axios from "axios";
-const { VITE_API_URL, VITE_API_PATH } = import.meta.env;
+const { VITE_APP_URL, VITE_APP_PATH } = import.meta.env;
 
 export default defineStore("productStore", {
   // data, methods, computed for vue component
@@ -14,7 +14,7 @@ export default defineStore("productStore", {
     getProducts() {
       this.isGettingProducts = true;
       axios
-        .get(`${VITE_API_URL}/api/${VITE_API_PATH}/products/all`)
+        .get(`${VITE_APP_URL}/api/${VITE_APP_PATH}/products/all`)
         .then((response) => {
           this.isGettingProducts = false;
           this.products = response.data.products;
@@ -26,7 +26,7 @@ export default defineStore("productStore", {
     getProductById(productId) {
       this.isGettingProducts = true;
       axios
-        .get(`${VITE_API_URL}/api/${VITE_API_PATH}/product/${productId}`)
+        .get(`${VITE_APP_URL}/api/${VITE_APP_PATH}/product/${productId}`)
         .then((res) => {
           this.isGettingProducts = false;
           this.product = res.data.product;
