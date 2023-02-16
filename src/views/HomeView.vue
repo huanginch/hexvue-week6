@@ -13,11 +13,11 @@ export default {
   name: "HomeView",
   methods: {
     ...mapActions(cartStore, ["getCart"]),
-    ...mapActions(authStore, ["getAuth"]),
+    ...mapActions(authStore, ["checkAuth"]),
   },
   mounted() {
     this.getCart();
-    this.getAuth();
+    this.checkAuth();
   },
 };
 </script>
