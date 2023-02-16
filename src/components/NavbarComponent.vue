@@ -123,9 +123,6 @@ export default {
   methods: {
     ...mapActions(authStore, ["logout"]),
   },
-  mounted() {
-    console.log(this.isLogged);
-  },
 };
 </script>
 

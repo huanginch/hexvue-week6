@@ -155,7 +155,7 @@ export default {
         message: this.message,
       };
       this.$http
-        .post(`${VITE_APP_URL}/${VITE_APP_PATH}/order`, { data })
+        .post(`${VITE_APP_URL}/api/${VITE_APP_PATH}/order`, { data })
         .then((res) => {
           // 清空購物車
           this.getCart();
